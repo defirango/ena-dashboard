@@ -8,16 +8,16 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Status palette — validated for colorblind-safety + contrast (never used alone; always paired with icon + label)
+        // Status palette, muted on purpose. Paired with a label, never used alone.
         status: {
-          good: '#0ca30c',
-          watch: '#fab219',
-          danger: '#d03b3b'
+          good: '#4a7062',
+          watch: '#8a7248',
+          danger: '#8f5049'
         },
-        // Sequential / categorical chart colors
+        // Categorical chart colors, muted to match the rest of the dashboard
         chart: {
-          blue: '#2a78d6',
-          orange: '#eb6834',
+          blue: '#4a6f9e',
+          orange: '#a97452',
           surface: '#fcfcfb',
           surfaceDark: '#1a1a19'
         }

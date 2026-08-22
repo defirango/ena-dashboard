@@ -3,10 +3,10 @@
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid, Legend } from 'recharts';
 import { fmtUsd, fmtPct } from '../lib/format';
 
-const COLORS = ['#2a78d6', '#eb6834']; // categorical slots 1 & 2 (validated palette) — fixed order, never cycled
+const COLORS = ['#4a6f9e', '#a97452']; // muted categorical slots 1 & 2, fixed order, never cycled
 
 // NOTE: formatter functions can't be passed as props from a Server Component,
-// so this client component owns its own formatting — pick by a plain string.
+// so this client component owns its own formatting. Pick by a plain string.
 const FORMATTERS = {
   usd: (v) => fmtUsd(v),
   usdPrecise: (v) => fmtUsd(v, { compact: false }),
@@ -22,7 +22,7 @@ export default function TrendChart({ data, series, format = 'usd', height = 220,
         className="flex items-center justify-center rounded-xl border border-dashed border-neutral-300 text-center text-sm text-neutral-400 dark:border-neutral-700"
         style={{ height }}
       >
-        {emptyMessage || 'History will appear here once the dashboard has collected a few days of data.'}
+        {emptyMessage || 'Not enough history yet.'}
       </div>
     );
   }
@@ -50,6 +50,22 @@ export default function TrendChart({ data, series, format = 'usd', height = 220,
             activeDot={{ r: 5 }}
           />
         ))}
+      </LineChart>
+    </ResponsiveContainer>
+  );
+}
+
+const SPARK_COLORS = { good: '#4a7062', watch: '#8a7248', danger: '#8f5049' };
+
+// Small inline trend line for a KPI card. No axes, no tooltip, just shape.
+export function Sparkline({ data, height = 36, level = 'good' }) {
+  if (!data || data.length < 2) return null;
+  const color = SPARK_COLORS[level] || SPARK_COLORS.good;
+
+  return (
+    <ResponsiveContainer width="100%" height={height}>
+      <LineChart data={data} margin={{ top: 2, right: 2, left: 2, bottom: 2 }}>
+        <Line type="monotone" dataKey="value" stroke={color} strokeWidth={1.5} dot={false} isAnimationActive={false} />
       </LineChart>
     </ResponsiveContainer>
   );

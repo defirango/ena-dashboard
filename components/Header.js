@@ -9,7 +9,7 @@ export default function Header({ priceUsd, marketCapUsd, change24hPct, generated
       <div className="flex flex-wrap items-start justify-between gap-4">
         <div>
           <h1 className="text-2xl font-bold tracking-tight">ENA Pulse</h1>
-          <p className="text-sm text-neutral-500 dark:text-neutral-400">Your at-a-glance investment monitor for Ethena ($ENA)</p>
+          <p className="text-sm text-neutral-500 dark:text-neutral-400">Investment monitor for Ethena ($ENA)</p>
         </div>
         <RefreshButton />
       </div>
@@ -21,8 +21,8 @@ export default function Header({ priceUsd, marketCapUsd, change24hPct, generated
         </div>
         <div>
           <div className="text-xs font-medium uppercase tracking-wide text-neutral-500 dark:text-neutral-400">24h Change</div>
-          <div className={`text-xl font-semibold ${changePositive ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400'}`}>
-            {change24hPct === null || change24hPct === undefined ? '—' : `${changePositive ? '+' : ''}${change24hPct.toFixed(2)}%`}
+          <div className={`text-xl font-semibold ${changePositive ? 'text-good' : 'text-danger'}`}>
+            {change24hPct === null || change24hPct === undefined ? '-' : `${changePositive ? '+' : ''}${change24hPct.toFixed(2)}%`}
           </div>
         </div>
         <div>

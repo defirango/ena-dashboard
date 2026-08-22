@@ -2,7 +2,7 @@
   "name": "ena-pulse-dashboard",
   "version": "1.0.0",
   "private": true,
-  "description": "Live investment-monitoring dashboard for Ethena (ENA) — 11 KPIs with plain-English bullish/bearish signals.",
+  "description": "Live investment-monitoring dashboard for Ethena (ENA): 11 KPIs with plain-English bullish/bearish signals.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

@@ -5,11 +5,11 @@ export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 
 // Vercel Cron automatically sends `Authorization: Bearer <CRON_SECRET>` when
-// the CRON_SECRET env var is set on the project — this checks that header so
+// the CRON_SECRET env var is set on the project. This checks that header so
 // nobody else can trigger unlimited external API calls from your public URL.
 function isAuthorized(request) {
   const secret = process.env.CRON_SECRET;
-  if (!secret) return true; // no secret configured yet — allow (see README to lock this down)
+  if (!secret) return true; // no secret configured yet, allow (see README to lock this down)
   const auth = request.headers.get('authorization');
   return auth === `Bearer ${secret}`;
 }

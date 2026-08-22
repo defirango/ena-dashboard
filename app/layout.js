@@ -1,7 +1,7 @@
 import './globals.css';
 
 export const metadata = {
-  title: 'ENA Pulse — Ethena Investment Dashboard',
+  title: 'ENA Pulse: Ethena Investment Dashboard',
   description: 'Live KPIs and plain-English bullish/bearish signals for tracking Ethena (ENA) as an investment.'
 };
 

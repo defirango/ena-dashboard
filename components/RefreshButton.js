@@ -31,7 +31,10 @@ export default function RefreshButton() {
   }
 
   const label =
-    state === 'loading' ? 'Refreshing…' : state === 'rate-limited' ? 'Refreshed recently — try again soon' : state === 'error' ? 'Refresh failed — try again' : 'Refresh now';
+    state === 'loading' ? 'Refreshing...' :
+    state === 'rate-limited' ? 'Refreshed recently. Try again soon.' :
+    state === 'error' ? 'Refresh failed. Try again.' :
+    'Refresh now';
 
   return (
     <button

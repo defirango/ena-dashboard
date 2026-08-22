@@ -5,10 +5,7 @@ export default function UnlockCountdown({ nextEvent, monthlyUnlockEna, vestingEn
 
   return (
     <div className="card flex flex-col gap-3">
-      <div className="flex items-center gap-2 text-sm font-medium text-neutral-500 dark:text-neutral-400">
-        <span aria-hidden="true">⏳</span>
-        <span>ENA Unlock Countdown</span>
-      </div>
+      <div className="text-sm font-medium text-neutral-500 dark:text-neutral-400">ENA Unlock Countdown</div>
 
       {nextEvent ? (
         <>
@@ -24,9 +21,8 @@ export default function UnlockCountdown({ nextEvent, monthlyUnlockEna, vestingEn
       )}
 
       <p className="text-sm leading-snug text-neutral-700 dark:text-neutral-300">
-        Roughly <strong>{fmtNum(monthlyUnlockEna)} ENA/month</strong> enters circulation from Core Contributor + Investor
-        vesting until vesting completes on {fmtDate(vestingEndDate)}. This is steady sell-side supply that any bullish
-        catalyst has to out-run.
+        Roughly <strong>{fmtNum(monthlyUnlockEna)} ENA per month</strong> enters circulation from Core Contributor and
+        Investor vesting until it ends on {fmtDate(vestingEndDate)}. This is steady sell pressure any rally has to out-run.
       </p>
     </div>
   );

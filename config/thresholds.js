@@ -1,10 +1,8 @@
-// ─────────────────────────────────────────────────────────────────────────────
-// Signal thresholds — the single place that decides "green / yellow / red"
-// for every KPI. Tune these anytime; nothing else in the app needs to change.
+// Signal thresholds. The single place that decides "green / yellow / red"
+// for every KPI. Tune these anytime, nothing else in the app needs to change.
 //
 // Sources for the starting values: Ethena docs, TokenIntel's May 2026 memo,
 // Nansen's unlock research, and DefiLlama historical ranges (see README).
-// ─────────────────────────────────────────────────────────────────────────────
 
 const THRESHOLDS = {
   usdeSupply: {
@@ -26,7 +24,7 @@ const THRESHOLDS = {
   },
   perpBackingShare: {
     // % of sUSDe backing that is delta-neutral perp positions (vs RWA/stable)
-    label: 'sUSDe Backing — Perp Share',
+    label: 'sUSDe Backing: Perp Share',
     good: 40, // healthy basis-trade engine
     watch: 10 // below this, Ethena is mostly a credit/RWA vehicle, not a yield-arb machine
   },
@@ -37,7 +35,7 @@ const THRESHOLDS = {
     watch: 5
   },
   loopExposurePct: {
-    // % of total USDe supply parked in Aave/Morpho lending markets (concentration risk — inverted: LOWER is better)
+    // % of total USDe supply parked in Aave/Morpho lending markets (concentration risk, inverted: lower is better)
     label: 'DeFi Loop Concentration',
     good: 35, // below this = healthy diversification
     watch: 55 // above this = concentration risk builds
@@ -54,7 +52,7 @@ const THRESHOLDS = {
     watch: 100_000_000
   },
   reserveFundPctOfSupply: {
-    // Reserve Fund balance as a % of USDe supply — the insurance cushion against negative funding periods
+    // Reserve Fund balance as a % of USDe supply. The insurance cushion against negative funding periods.
     label: 'Reserve Fund Cushion',
     good: 1.5,
     watch: 0.5

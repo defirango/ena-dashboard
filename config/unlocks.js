@@ -1,8 +1,6 @@
-// ─────────────────────────────────────────────────────────────────────────────
-// ENA vesting/unlock schedule — manually maintained (no reliable free live API
-// for this). Source: Ethena docs (TGE terms) + Tokenomist.ai + Nansen research.
+// ENA vesting/unlock schedule. Manually maintained (no reliable free live API
+// for this). Source: Ethena docs (TGE terms), Tokenomist.ai, and Nansen research.
 // Update this array whenever a new cliff or schedule change is announced.
-// ─────────────────────────────────────────────────────────────────────────────
 
 const TGE_DATE = '2024-03-05';
 const CLIFF_DATE = '2025-04-02'; // 1-year cliff, 25% of core+investor allocation unlocked

@@ -4,6 +4,26 @@
 
 :root {
   color-scheme: light dark;
+
+  /* Muted status palette. Desaturated on purpose, this is a finance tool, not
+     a game. Tune here, nothing else needs to change. */
+  --status-good: #4a7062;
+  --status-good-bg: #eef2f0;
+  --status-watch: #8a7248;
+  --status-watch-bg: #f3efe6;
+  --status-danger: #8f5049;
+  --status-danger-bg: #f4ebea;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --status-good: #8fb3a3;
+    --status-good-bg: rgba(74, 112, 98, 0.16);
+    --status-watch: #c8ac7c;
+    --status-watch-bg: rgba(138, 114, 72, 0.16);
+    --status-danger: #c99089;
+    --status-danger-bg: rgba(143, 80, 73, 0.16);
+  }
 }
 
 body {
@@ -18,16 +38,26 @@ body {
   @apply inline-block h-3 w-3 rounded-full shrink-0;
 }
 
-.dot-good { background-color: #0ca30c; }
-.dot-watch { background-color: #fab219; }
-.dot-danger { background-color: #d03b3b; }
+.dot-good { background-color: var(--status-good); }
+.dot-watch { background-color: var(--status-watch); }
+.dot-danger { background-color: var(--status-danger); }
 .dot-unknown { @apply bg-neutral-400; }
 
 .pill {
   @apply inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-sm font-medium;
 }
 
-.pill-good { @apply bg-green-50 text-green-800 dark:bg-green-950 dark:text-green-300; }
-.pill-watch { @apply bg-amber-50 text-amber-800 dark:bg-amber-950 dark:text-amber-300; }
-.pill-danger { @apply bg-red-50 text-red-800 dark:bg-red-950 dark:text-red-300; }
+.pill-good { background-color: var(--status-good-bg); color: var(--status-good); }
+.pill-watch { background-color: var(--status-watch-bg); color: var(--status-watch); }
+.pill-danger { background-color: var(--status-danger-bg); color: var(--status-danger); }
 .pill-unknown { @apply bg-neutral-100 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-300; }
+
+.text-good { color: var(--status-good); }
+.text-watch { color: var(--status-watch); }
+.text-danger { color: var(--status-danger); }
+.bg-good-soft { background-color: var(--status-good-bg); }
+.bg-watch-soft { background-color: var(--status-watch-bg); }
+.bg-danger-soft { background-color: var(--status-danger-bg); }
+.bg-good { background-color: var(--status-good); }
+.bg-watch { background-color: var(--status-watch); }
+.bg-danger { background-color: var(--status-danger); }
