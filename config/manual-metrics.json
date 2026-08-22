@@ -1,0 +1,21 @@
+{
+  "_readme": "These fields have no reliable free public API. Update them whenever Ethena or StablecoinX publish new numbers (a few times a year), then redeploy. Each has an 'asOf' date shown on the dashboard so it's never mistaken for live data.",
+
+  "susdeBackingComposition": {
+    "asOf": "2026-04-01",
+    "perpSharePct": 0.5,
+    "rwaSharePct": 84,
+    "otherSharePct": 15.5,
+    "source": "https://oakresearch.io/en/analyses/investigations/ethena-fee-switch-our-models-proposal-and-doubts"
+  },
+
+  "stablecoinX": {
+    "asOf": "2026-06-30",
+    "enaHeldTokens": 3000000000,
+    "treasuryValueUsd": 218400000,
+    "pipeRaiseUsd": 890000000,
+    "source": "https://www.globenewswire.com/news-release/2026/08/14/3345337/0/en/stablecoinx-inc-continues-to-build-on-the-ethena-ecosystem-reports-ena-treasury-of-approximately-3-0-billion-tokens-at-end-of-second-quarter-2026.html"
+  },
+
+  "enaTotalSupply": 15000000000
+}

@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light dark;
+}
+
+body {
+  @apply bg-neutral-50 text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100;
+}
+
+.card {
+  @apply rounded-2xl border border-neutral-200 bg-white p-5 shadow-sm dark:border-neutral-800 dark:bg-neutral-900;
+}
+
+.dot {
+  @apply inline-block h-3 w-3 rounded-full shrink-0;
+}
+
+.dot-good { background-color: #0ca30c; }
+.dot-watch { background-color: #fab219; }
+.dot-danger { background-color: #d03b3b; }
+.dot-unknown { @apply bg-neutral-400; }
+
+.pill {
+  @apply inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-sm font-medium;
+}
+
+.pill-good { @apply bg-green-50 text-green-800 dark:bg-green-950 dark:text-green-300; }
+.pill-watch { @apply bg-amber-50 text-amber-800 dark:bg-amber-950 dark:text-amber-300; }
+.pill-danger { @apply bg-red-50 text-red-800 dark:bg-red-950 dark:text-red-300; }
+.pill-unknown { @apply bg-neutral-100 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-300; }
