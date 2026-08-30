@@ -17,5 +17,14 @@
     "source": "https://www.globenewswire.com/news-release/2026/08/14/3345337/0/en/stablecoinx-inc-continues-to-build-on-the-ethena-ecosystem-reports-ena-treasury-of-approximately-3-0-billion-tokens-at-end-of-second-quarter-2026.html"
   },
 
+  "reserveFund": {
+    "asOf": "2026-03-31",
+    "totalUsd": 62000000,
+    "usdtbUsd": 41980000,
+    "usdtbUsdcLpUsd": 20020000,
+    "note": "Roughly 9x the March 2026 conservative tail-risk requirement of $7M.",
+    "source": "https://gov.ethenafoundation.com/t/reserve-fund-march-2026-update/775"
+  },
+
   "enaTotalSupply": 15000000000
 }
