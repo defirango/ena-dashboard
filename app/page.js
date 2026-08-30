@@ -3,13 +3,11 @@ import { computeAllMetrics } from '../lib/metrics';
 import { computeChartHistory } from '../lib/history';
 import { getMessage } from '../lib/messages';
 import { fmtUsd, fmtPct, fmtNum, fmtDate } from '../lib/format';
-import { KNOWN_EVENTS, MONTHLY_LINEAR_UNLOCK_ENA, VESTING_END_DATE } from '../config/unlocks';
 
 import Header from '../components/Header';
 import BiasMeter from '../components/BiasMeter';
 import KpiCard from '../components/KpiCard';
 import TrendChart from '../components/TrendChart';
-import UnlockCountdown from '../components/UnlockCountdown';
 import Footer from '../components/Footer';
 
 export const dynamic = 'force-dynamic';
@@ -34,7 +32,6 @@ export default async function Page() {
 
   const { metrics, signals, overall, warnings, generatedAt } = snapshot;
   const allWarnings = [...warnings, ...historyWarnings];
-  const nextUnlockEvent = KNOWN_EVENTS.find((e) => new Date(e.date).getTime() > Date.now()) ?? null;
 
   const usdeSupplyTrend = history.filter((h) => h.usdeSupply !== null).map((h) => ({ value: h.usdeSupply }));
   const apySpreadTrend = history
@@ -173,12 +170,13 @@ export default async function Page() {
             sub={`${fmtPct(metrics.reserveFundPctOfSupply)} of USDe supply`}
             level={signals.reserveFundPctOfSupply.level}
             message={getMessage('reserveFundPctOfSupply', signals.reserveFundPctOfSupply.level)}
-          />
+            asOf={fmtDate(metrics.reserveFund.asOf)}
+          >
+            <p className="text-xs leading-snug text-neutral-500 dark:text-neutral-400">
+              {fmtUsd(metrics.reserveFund.usdtbUsd)} USDtb + {fmtUsd(metrics.reserveFund.usdtbUsdcLpUsd)} USDtb-USDC LP. {metrics.reserveFund.note}
+            </p>
+          </KpiCard>
         </div>
-      </section>
-
-      <section className="mb-8">
-        <UnlockCountdown nextEvent={nextUnlockEvent} monthlyUnlockEna={MONTHLY_LINEAR_UNLOCK_ENA} vestingEndDate={VESTING_END_DATE} />
       </section>
 
       <Footer warnings={allWarnings} />
