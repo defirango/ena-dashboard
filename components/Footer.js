@@ -8,8 +8,28 @@ export default function Footer({ warnings }) {
         </div>
       )}
 
-      <div className="text-xs text-neutral-400 dark:text-neutral-600">
-        Educational tool only, not investment advice.
+      <div className="flex flex-wrap items-center justify-between gap-2 text-xs text-neutral-400 dark:text-neutral-600">
+        <span>Educational tool only, not investment advice.</span>
+        <span>
+          Built by{' '}
+          <a
+            href="https://x.com/DefiRango"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline decoration-dotted underline-offset-4 hover:text-neutral-600 dark:hover:text-neutral-300"
+          >
+            @DefiRango
+          </a>
+          {' · '}
+          <a
+            href="https://tldrbyrango.substack.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline decoration-dotted underline-offset-4 hover:text-neutral-600 dark:hover:text-neutral-300"
+          >
+            TL;DR by Rango
+          </a>
+        </span>
       </div>
     </footer>
   );
